@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { Course } from '../../interfaces/course.model';
-import { CourseListComponent } from '../course-list/course-list.component';
+
 
 @Component({
   selector: 'app-main',
