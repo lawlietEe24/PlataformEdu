@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 // import { CourseListComponent } from './components/course-list/course-list.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { EditCourseComponent } from './components/edit-course/edit-course.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/main' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'edit-course/:id', component: EditCourseComponent },
   // { path: 'course-list', component: CourseListComponent },
   { path: 'add-course', component: AddCourseComponent }
 ];

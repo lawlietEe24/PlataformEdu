@@ -1,7 +1,9 @@
 export interface Course {
-    id?: string;
-    title: string;
+    id?: string; // Optional ID for Firestore document
+    name: string;
     description: string;
-    instructorId: string;
-}
-  
+    duration: number;
+    dateStart: Date;
+    dateEnd: Date;
+    imageUrl?: string; // Added optional imageUrl property
+  }
