@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6" >
+
+    <h2 class="text-center mb-5">Agregar Curso</h2>
+    <form [formGroup]="formCourse" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nombre del Curso</label>
+        <input type="text" id="name" class="form-control" formControlName="name" placeholder="Ingrese el nombre del curso" required />
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="description">Descripción</label>
+        <textarea id="description" class="form-control" formControlName="description" placeholder="Ingrese la descripción del curso" required></textarea>
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="duration">Duración (en horas)</label>
+        <input type="number" id="duration" class="form-control" formControlName="duration" placeholder="Ingrese la duración del curso en horas" required />
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="dateStart">Fecha de Inicio</label>
+        <input type="date" id="dateStart" class="form-control" formControlName="dateStart" required />
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="dateEnd">Fecha de Fin</label>
+        <input type="date" id="dateEnd" class="form-control" formControlName="dateEnd" required />
+      </div>
+  
+      <div class="form-group mt-3">
+        <label for="imageUrl">URL de la Imagen</label>
+        <input type="text" id="imageUrl" class="form-control" formControlName="imageUrl" placeholder="Ingrese la URL de la imagen del curso" (input)="updateImagePreview()" />
+      </div>
+  
+      <!-- Vista previa de la imagen -->
+      <div class="mt-3 text-center" *ngIf="imagePreview">
+        <p>Vista previa:</p>
+        <img [src]="imagePreview" class="img-thumbnail" alt="Vista previa del curso" style="max-width: 200px;">
+      </div>
+  
+      <div class="form-group mt-4 text-center mb-5">
+        <button type="submit" class="btn btn-primary" [disabled]="formCourse.invalid">
+          Agregar Curso
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

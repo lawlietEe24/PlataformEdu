@@ -1,0 +1,39 @@
+<h1 class="text-center">Página Principal</h1>
+<div class="container mt-4">
+  <div class="d-flex justify-content-between">
+    <h2>Lista de Cursos</h2>
+    <button (click)="onAddCourse()" class="btn btn-success">Agregar Curso</button>
+  </div>
+
+  <div *ngIf="courses.length === 0" class="alert alert-warning text-center mt-3">
+    No hay cursos disponibles.
+  </div>
+
+  <div class="row mt-4">
+    <div *ngFor="let course of courses" class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <img *ngIf="course.imageUrl && course.imageUrl.trim() !== ''" 
+             [src]="course.imageUrl" 
+             class="card-img-top" 
+             alt="{{ course.name }}">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ course.name }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <p><strong>Duración:</strong> {{ course.duration }} horas</p>
+          <p><strong>Inicio:</strong> {{ course.dateStart | date:'longDate' }}</p>
+          <p><strong>Fin:</strong> {{ course.dateEnd | date:'longDate' }}</p>
+
+          <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-warning btn-sm" (click)="course.id ? onEdit(course.id) : null">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="onDelete(course.id ?? '')">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-8 mb-5">
+    <button (click)="onClick()" class="btn btn-outline-danger">Logout</button>
+  </div>
+</div>

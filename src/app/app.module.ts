@@ -11,12 +11,18 @@ import { environment } from '../environments/environment';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
-import { MainComponent } from './components/main/main.component';
 
-import { AddCourseComponent } from './components/add-course/add-course.component';
-import { EditCourseComponent } from './components/edit-course/edit-course.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { MainComponent } from './pages/main/main.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AddCourseComponent } from './pages/add-course/add-course.component';
+import { EditCourseComponent } from './pages/edit-course/edit-course.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,14 @@ import { EditCourseComponent } from './components/edit-course/edit-course.compon
     RegisterComponent,
     LoginComponent,
     AddCourseComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    NavBarComponent,
+    FooterComponent,
+    MainLayoutComponent,
+    AuthLayoutComponent,
+    WelcomeComponent,
+    NotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,

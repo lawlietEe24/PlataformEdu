@@ -1,0 +1,26 @@
+/* not-found.component.css */
+.error-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .error-code {
+    font-size: 8rem;
+    line-height: 1;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .error-code {
+      font-size: 5rem;
+    }
+  }
+  
+  /* Animación para el astronauta */
+  .error-image img {
+    transition: transform 0.5s ease;
+  }
+  
+  .error-image:hover img {
+    transform: rotate(10deg);
+  }
